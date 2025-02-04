@@ -1,2 +1,1 @@
-# CodingTest
-CodingTestPrac
+# Algorithm
