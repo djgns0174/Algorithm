@@ -5,13 +5,18 @@ using namespace std;
 
 int main(){
     int n, m;
-    n = 4; m = 6;
+    cin >> n >> m;
 
-    int arr[4] = {19, 15, 10 ,17};
-    int arrSize = sizeof(arr)/sizeof(arr[0]);
+    vector<int> arr(n);
+
+    for(int i=0; i<n; i++){
+        cin >> arr[i];
+    }
+
+    int arrSize = arr.size();
 
     int result = 0;
-    int start = 0; int end = *std::max_element(arr, arr +arrSize) - 1;
+    int start = 0; int end = *std::max_element(arr.begin(), arr.end()) - 1;
 
     while(start <= end){
         result = (start + end) / 2;
