@@ -4,9 +4,13 @@ using namespace std;
 
 int main(){
     int n, x;
-    n = 7; x = 2;
+    cin >> n >> x;
 
-    vector<int> arr = {1,1,2,2,2,2,3};
+    vector<int> arr(n);
+
+    for(int i=0; i<n; i++){
+        cin >> arr[i];
+    }
 
     int start = 0; int end = n - 1;
 
