@@ -5,9 +5,15 @@ using namespace std;
 int main(void){
 
     int n, m;
-    n = 3; m = 4;
+    cin >> n >> m;
 
-    vector<vector<int> > inputArr = {{1,3,3,2}, {2,1,4,1}, {0,6,4,7}};
+    vector<vector<int> > inputArr(n, vector<int>(m));
+    for(int i=0; i<n; i++){
+        for(int j=0; j<m; j++){
+            cin >> inputArr[i][j];
+        }
+    }
+
     vector<vector<int> > dp(n, vector<int>(m,0));
 
     for(int i=0; i<n; i++){
