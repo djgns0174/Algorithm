@@ -1,19 +1,30 @@
 #include<iostream>
-#include<queue>
+#include<vector>
 
 using namespace std;
 
 int main(void){
 
-    int arr[] = {1,2,3,4,5};
-    // int n, k;
-    // cin >> n >> k;
-    // cout << n << endl;
+    int n, k;
+    int answer = 0;
 
-    for(int i=0; i<5; i++){
-        cout << arr[i];
+    cin >> n >> k;
+    vector<int> arr(n, 0);
+
+    //입력데이터 받기
+    for(int i=0; i<n; i++){
+        cin>>arr[i];
     }
-    cout << endl;
 
-    return 0;
+    int target = k;
+    for(int i=n-1; i>=0; i--){
+        if(target == 0){
+            break;
+        }
+
+        answer += target/arr[i];
+        target = target%arr[i];
+    }
+
+    cout << answer << endl;
 }
