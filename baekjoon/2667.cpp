@@ -2,6 +2,7 @@
 #include<string>
 #include<vector>
 #include<queue>
+#include<algorithm>
 #define MAX 25
 
 using namespace std;
@@ -69,6 +70,9 @@ int main(void){
             }
         }
     }
+
+    //정렬
+    sort(homes.begin(), homes.end());
 
     //결과 출력
     cout << homes.size() << endl;
