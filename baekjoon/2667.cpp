@@ -9,7 +9,7 @@ using namespace std;
 
 int n;
 int arr[MAX][MAX];
-bool visit[MAX][MAX];
+bool visited[MAX][MAX];
 
 
 int func(int startY, int startX){
@@ -20,7 +20,7 @@ int func(int startY, int startX){
     queue<pair<int, int> >q;
     
     q.push({startX, startY});
-    visit[startY][startX] = true;
+    visited[startY][startX] = true;
     while(!q.empty()){
         int x = q.front().first;
         int y = q.front().second;
@@ -30,9 +30,9 @@ int func(int startY, int startX){
             int nx = x + dx[i];
             int ny = y + dy[i];
             if(nx < 0 || ny < 0 || nx >= n || ny >= n) continue;
-            if(arr[ny][nx] == 1 && !visit[ny][nx]){
+            if(arr[ny][nx] == 1 && !visited[ny][nx]){
                 q.push({nx, ny});
-                visit[ny][nx] = true;
+                visited[ny][nx] = true;
                 cnt++;
             }
         }
@@ -59,13 +59,13 @@ int main(void){
     //visit초기화
     for(int i=0; i<n; i++){
         for(int j=0; j<n; j++){
-            visit[i][j] = false;
+            visited[i][j] = false;
         }
     }
 
     for(int i=0; i<n; i++){
         for(int j=0; j<n; j++){
-            if(arr[i][j] == 1 && !visit[i][j]){
+            if(arr[i][j] == 1 && !visited[i][j]){
                 homes.push_back(func(i, j));
             }
         }
