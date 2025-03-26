@@ -28,7 +28,7 @@ int main(void){
             }
         } 
         dp[i] = min;
-        cout << i << " : " << dp[i] << "\n";
+        // cout << i << " : " << dp[i] << "\n";
     }
 
     cout << dp[x] << "\n";
