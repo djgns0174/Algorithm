@@ -49,16 +49,19 @@ int main(void)
 
         int exec_cnt = 0;
         int j = 0;
-        int minj, maxj;
+        int minj = INT_MAX;
+        int maxj = INT_MIN;
         for(; j<s_c; j++)
         {
             exec_cnt++;
 
             char c = command[j];
-
-            if(exec_cnt == MAX_EXEC_CNT)
+            if(exec_cnt >= MAX_EXEC_CNT * 2)
             {
-                maxj = minj = j;
+                ostringstream oss;
+                oss << "Loops " << loop_reverse_couple[maxj] << " " << maxj;
+                answers.push_back(oss.str());
+                break;
             }
 
             if(exec_cnt > MAX_EXEC_CNT)
@@ -66,15 +69,6 @@ int main(void)
                 maxj = max(maxj, j);
                 minj = min(minj, j);
             }
-
-            if(exec_cnt >= MAX_EXEC_CNT * 2)
-            {
-                ostringstream oss;
-                oss << "Loops " << minj << " " << maxj;
-                answers.push_back(oss.str());
-                break;
-            }
-
 
             switch (c)
             {
