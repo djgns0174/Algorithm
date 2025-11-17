@@ -46,8 +46,6 @@ int main(int argc, char** argv)
                     answer = "Impossible";
                     break;
                 }
-                
-                is_arrived[sec] = 0;
             }
 
             sec++;
